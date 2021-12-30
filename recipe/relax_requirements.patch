@@ -1,0 +1,16 @@
+diff --git a/setup.py b/setup.py
+index 43324d5..d6ee659 100644
+--- a/setup.py
++++ b/setup.py
+@@ -32,9 +32,9 @@ setuptools.setup(
+         "matplotlib",
+         "networkx",
+         "numpy",
+-        "opencv-python-headless",
++        # "opencv-python-headless",
+         "pandas>=1.0.1",
+-        "scikit-image>=0.17,<=0.18.1",
++        "scikit-image>=0.17",
+         "scikit-learn",
+         "scipy>=1.4",
+         "statsmodels>=0.11",
