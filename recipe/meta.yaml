@@ -11,9 +11,11 @@ source:
     - 0001-remove_legacy_download.sh
     # https://github.com/DeepLabCut/DeepLabCut/pull/1613
     - 1613-multi_monitor_resize.patch
+    # Conda forge doesn't do well with opencv python headless with pip check
+    - remove_opencv_python_headless.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   # Confirm with upstream before making this entry point
@@ -52,6 +54,10 @@ requirements:
     - pillow >=7.1
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     # deeplabcut has "deep" dependencies.
     # On the CI, it fails with:
