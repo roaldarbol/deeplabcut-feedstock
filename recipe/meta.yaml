@@ -12,6 +12,7 @@ source:
     # https://github.com/DeepLabCut/DeepLabCut/pull/1613
     - 1613-multi_monitor_resize.patch
     - relax_requirements.patch
+    - 1577-avoid_hack_in_spawning_processes.patch
 
 build:
   number: 0
