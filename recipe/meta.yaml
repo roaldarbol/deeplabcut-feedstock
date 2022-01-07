@@ -11,7 +11,6 @@ source:
     - 0001-remove_legacy_download.sh
     # https://github.com/DeepLabCut/DeepLabCut/pull/1613
     - 1613-multi_monitor_resize.patch
-    # Conda forge doesn't do well with opencv python headless with pip check
     - relax_requirements.patch
 
 build:
