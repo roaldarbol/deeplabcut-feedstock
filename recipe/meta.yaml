@@ -1,4 +1,4 @@
-{% set version = "2.2.0.5" %}
+{% set version = "2.2.0.6" %}
 
 package:
   name: deeplabcut
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: 9b8c66ac6def2b1cd6f115789957b1bc0f75b4304ec11bf9106c3ac3085e899e
+  sha256: 4aa6694201e2aa56b9bd3e97ab27b0bc54f1364303167216174d2376d8ae0f84
   patches:
     - 0001-remove_legacy_download.sh
     # https://github.com/DeepLabCut/DeepLabCut/pull/1613
