@@ -13,10 +13,11 @@ source:
     - 1613-multi_monitor_resize.patch
     - relax_requirements.patch
     - 1577-avoid_hack_in_spawning_processes.patch
+    - 1730_delay_wx_import.patch
     - silence_light_mode_warning.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   # Confirm with upstream before making this entry point
@@ -32,25 +33,24 @@ requirements:
   run:
     - python >=3.6
     - ipython
-    - filterpy
+    - filterpy >=1.4.4
     - ruamel.yaml >=0.15.0
     - imgaug >=0.4.0
-    - numba
-    - matplotlib-base
-    - networkx
-    - numpy
+    - numba >=0.54
+    - matplotlib-base >=3.3
+    - networkx >=2.6
+    - numpy >=1.18.5
     - opencv
     - pandas >=1.0.1
-    - scikit-image >=0.17
-    - scikit-learn
+    - scikit-image >=0.17,!=0.18.1
+    - scikit-learn >=1.0
     - scipy >=1.4
-    - statsmodels >=0.11
-    - pytables
+    - statsmodels >=0.11,!=0.13.2
+    - pytables >=3.7
     - tensorflow >=2.0
-    - tensorpack
-    - tf_slim
+    - tensorpack >=0.11
+    - tf_slim >=1.1.0
     - tqdm
-    - moviepy
     - pyyaml
     - pillow >=7.1
 

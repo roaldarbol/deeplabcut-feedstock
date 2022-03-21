@@ -1,0 +1,61 @@
+From 30f28c63b9bb1a5e68530cc6d6bda48e29fcc806 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 21 Mar 2022 13:54:28 -0400
+Subject: [PATCH] Delay setting the matplotlib backend until the user asks to
+ launch the GUI
+
+---
+ deeplabcut/__init__.py          | 10 ----------
+ deeplabcut/gui/launch_script.py |  3 +++
+ 2 files changed, 3 insertions(+), 10 deletions(-)
+
+diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
+index f4c3d0b6a..190b274ee 100644
+--- a/deeplabcut/__init__.py
++++ b/deeplabcut/__init__.py
+@@ -17,13 +17,7 @@
+ DEBUG = True and "DEBUG" in os.environ and os.environ["DEBUG"]
+ from deeplabcut import DEBUG
+ 
+-# DLClight version does not support GUIs. Importing accordingly
+-import matplotlib as mpl
+-
+ try:
+-    import wx
+-
+-    mpl.use("WxAgg")
+     from deeplabcut import generate_training_dataset
+     from deeplabcut import refine_training_dataset
+ 
+@@ -38,10 +32,6 @@
+     print(
+         "DLC loaded in light mode; you cannot use any GUI (labeling, relabeling and standalone GUI)"
+     )
+-    mpl.use(
+-        "AGG"
+-    )  # anti-grain geometry engine #https://matplotlib.org/faq/usage_faq.html
+-
+ 
+ from deeplabcut.create_project import (
+     create_new_project,
+diff --git a/deeplabcut/gui/launch_script.py b/deeplabcut/gui/launch_script.py
+index b59772560..4b6ac99a5 100644
+--- a/deeplabcut/gui/launch_script.py
++++ b/deeplabcut/gui/launch_script.py
+@@ -10,6 +10,7 @@
+ """
+ import os
+ import wx
++import matplotlib as mpl
+ 
+ from deeplabcut.gui.create_new_project import Create_new_project
+ from deeplabcut.gui.welcome import Welcome
+@@ -41,6 +42,8 @@ def __init__(self):
+ 
+ 
+ def launch_dlc():
++    mpl.use("WxAgg")
++
+     app = wx.App()
+     app.locale = wx.Locale(wx.LANGUAGE_ENGLISH)
+     frame = MainFrame().Show()
