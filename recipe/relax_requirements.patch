@@ -1,8 +1,8 @@
 diff --git a/setup.py b/setup.py
-index 3bff4f2..1f2762d 100644
+index 3bff4f2..a6bbf9b 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -23,30 +23,6 @@ setuptools.setup(
+@@ -23,31 +23,6 @@ setuptools.setup(
      long_description=long_description,
      long_description_content_type="text/markdown",
      url="https://github.com/DeepLabCut/DeepLabCut",
@@ -30,6 +30,7 @@ index 3bff4f2..1f2762d 100644
 -        "Pillow>=7.1",
 -    ],
 -    extras_require={"gui": ["wxpython<4.1"]},
-     scripts=["deeplabcut/pose_estimation_tensorflow/models/pretrained/download.sh"],
+-    scripts=["deeplabcut/pose_estimation_tensorflow/models/pretrained/download.sh"],
      packages=setuptools.find_packages(),
      data_files=[
+         (

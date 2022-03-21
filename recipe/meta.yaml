@@ -8,7 +8,6 @@ source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
   sha256: 4aa6694201e2aa56b9bd3e97ab27b0bc54f1364303167216174d2376d8ae0f84
   patches:
-    - 0001-remove_legacy_download.sh
     # https://github.com/DeepLabCut/DeepLabCut/pull/1613
     - 1613-multi_monitor_resize.patch
     - relax_requirements.patch
