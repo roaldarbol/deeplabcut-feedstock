@@ -1,18 +1,15 @@
 diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
-index f4c3d0b..9e16877 100644
+index 190b274..604764d 100644
 --- a/deeplabcut/__init__.py
 +++ b/deeplabcut/__init__.py
-@@ -35,12 +35,7 @@ try:
+@@ -29,9 +29,7 @@ try:
  
      from deeplabcut.utils.skeleton import SkeletonBuilder
  except (ModuleNotFoundError, ImportError):
 -    print(
 -        "DLC loaded in light mode; you cannot use any GUI (labeling, relabeling and standalone GUI)"
 -    )
--    mpl.use(
--        "AGG"
--    )  # anti-grain geometry engine #https://matplotlib.org/faq/usage_faq.html
 +    pass
  
- 
  from deeplabcut.create_project import (
+     create_new_project,
