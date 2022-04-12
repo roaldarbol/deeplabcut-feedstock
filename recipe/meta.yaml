@@ -8,11 +8,8 @@ source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
   sha256: c02473287db26b0fb9006338f25af858a441b16fae6c52d9a32496d719375489
   patches:
-    # https://github.com/DeepLabCut/DeepLabCut/pull/1613
-    - 1613-multi_monitor_resize.patch
     - relax_requirements.patch
     - 1577-avoid_hack_in_spawning_processes.patch
-    - 1730_delay_wx_import.patch
     - silence_light_mode_warning.patch
 
 build:
