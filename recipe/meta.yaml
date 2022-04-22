@@ -1,4 +1,4 @@
-{% set version = "2.2.0.6" %}
+{% set version = "2.2.1" %}
 
 package:
   name: deeplabcut
@@ -6,17 +6,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: 4aa6694201e2aa56b9bd3e97ab27b0bc54f1364303167216174d2376d8ae0f84
+  sha256: c02473287db26b0fb9006338f25af858a441b16fae6c52d9a32496d719375489
   patches:
-    # https://github.com/DeepLabCut/DeepLabCut/pull/1613
-    - 1613-multi_monitor_resize.patch
     - relax_requirements.patch
-    - 1577-avoid_hack_in_spawning_processes.patch
-    - 1730_delay_wx_import.patch
     - silence_light_mode_warning.patch
 
 build:
-  number: 3
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   # Confirm with upstream before making this entry point
@@ -40,7 +36,7 @@ requirements:
     - numpy >=1.18.5
     - opencv
     - pandas >=1.0.1
-    - scikit-image >=0.17,!=0.18.1
+    - scikit-image >=0.17,!=0.18.2
     - scikit-learn >=1.0
     - scipy >=1.4
     - statsmodels >=0.11,!=0.13.2
