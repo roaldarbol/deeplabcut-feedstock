@@ -10,9 +10,10 @@ source:
   patches:
     - relax_requirements.patch
     - silence_light_mode_warning.patch
+    - do_not_force_tf_v1.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   # Confirm with upstream before making this entry point
