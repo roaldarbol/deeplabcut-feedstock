@@ -1,0 +1,27 @@
+From e39eab51792003334984016516d18ca351de1710 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 15 Aug 2022 07:21:11 -0400
+Subject: [PATCH 3/3] Do not forcibly adjust Tensorflow warnings
+
+---
+ deeplabcut/__init__.py | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
+index ef35c3e..2419efb 100644
+--- a/deeplabcut/__init__.py
++++ b/deeplabcut/__init__.py
+@@ -10,10 +10,6 @@ Licensed under GNU Lesser General Public License v3.0
+ 
+ import os
+ 
+-# Suppress tensorflow warning messages
+-import tensorflow as tf
+-
+-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+ DEBUG = True and "DEBUG" in os.environ and os.environ["DEBUG"]
+ from deeplabcut import DEBUG
+ from deeplabcut.version import __version__, VERSION
+-- 
+2.34.1
+
