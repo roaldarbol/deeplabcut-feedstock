@@ -8,9 +8,9 @@ source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
   sha256: 3acabab6c80c075d9b8570568840637062545092c97ba67c8e31858203aaf886
   patches:
-    - relax_requirements.patch
-    - silence_light_mode_warning.patch
-    - do_not_force_tf_v1.patch
+    - patches/0001-Relax-pip-requirements-for-conda-package.patch
+    - patches/0002-Silicence-warnigns-about-loading-DLC-in-light-mode.patch
+    - patches/0003-Do-not-forcibly-adjust-Tensorflow-warnings.patch
 
 build:
   number: 0
