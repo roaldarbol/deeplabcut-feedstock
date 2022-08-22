@@ -1,4 +1,4 @@
-{% set version = "2.2.1.1" %}
+{% set version = "2.2.2" %}
 
 package:
   name: deeplabcut
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: 3acabab6c80c075d9b8570568840637062545092c97ba67c8e31858203aaf886
+  sha256: e57bd049adb90f18d3597cbb2b2a2a3d90e2fe80db0c138274979c64506fdb98
   patches:
     - patches/0001-Relax-pip-requirements-for-conda-package.patch
     - patches/0002-Silicence-warnigns-about-loading-DLC-in-light-mode.patch
