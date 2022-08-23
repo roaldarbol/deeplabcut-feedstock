@@ -8,7 +8,7 @@ source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
   sha256: e57bd049adb90f18d3597cbb2b2a2a3d90e2fe80db0c138274979c64506fdb98
   patches:
-    - patches/0001-Relax-pip-requirements-for-conda-package.patch
+    - patches/0001-Remove-download-script-installation.patch
     - patches/0002-Silicence-warnigns-about-loading-DLC-in-light-mode.patch
     - patches/0003-Do-not-forcibly-adjust-Tensorflow-warnings.patch
 
@@ -37,10 +37,10 @@ requirements:
     - numpy >=1.18.5
     - opencv
     - pandas >=1.0.1
-    - scikit-image >=0.17,!=0.18.2
+    - scikit-image >=0.17,<=1.0.0
     - scikit-learn >=1.0
     - scipy >=1.4
-    - statsmodels >=0.11,!=0.13.2
+    - statsmodels >=0.11
     - pytables >=3.7
     - tensorflow >=2.0
     - tensorpack >=0.11
