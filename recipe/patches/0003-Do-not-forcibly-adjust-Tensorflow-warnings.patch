@@ -1,4 +1,4 @@
-From e39eab51792003334984016516d18ca351de1710 Mon Sep 17 00:00:00 2001
+From bf3c89cb43868507cf745849ce3258656aa33230 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Mon, 15 Aug 2022 07:21:11 -0400
 Subject: [PATCH 3/3] Do not forcibly adjust Tensorflow warnings
@@ -8,7 +8,7 @@ Subject: [PATCH 3/3] Do not forcibly adjust Tensorflow warnings
  1 file changed, 4 deletions(-)
 
 diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
-index ef35c3e..2419efb 100644
+index 5219f1a..ccdbc66 100644
 --- a/deeplabcut/__init__.py
 +++ b/deeplabcut/__init__.py
 @@ -10,10 +10,6 @@ Licensed under GNU Lesser General Public License v3.0
