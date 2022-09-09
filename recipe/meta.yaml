@@ -13,7 +13,7 @@ source:
     - patches/0003-Do-not-forcibly-adjust-Tensorflow-warnings.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   # Confirm with upstream before making this entry point
@@ -53,9 +53,7 @@ test:
   requires:
     - pip
   commands:
-    # pip check won't pass because certain dependencies like
-    # tensorflow and imgaug don't play nice with pip check
-    - pip check || echo "pip check failed but ignoring"
+    - pip check
   imports:
     # deeplabcut has "deep" dependencies.
     # On the CI, it fails with:
