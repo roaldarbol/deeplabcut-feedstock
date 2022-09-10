@@ -81,8 +81,8 @@ test:
     # This has been fixed for modern versions of libc.
     # https://github.com/pytorch/pytorch/issues/2575
     # https://sourceware.org/bugzilla/show_bug.cgi?id=17620
-    # - deeplabcut
-    # Make sure we can load the main dependecy, but not the actual package....
+    - deeplabcut
+    # Make sure we can load the main dependency, but not the actual package....
     # This is really a workaround.
     - tensorflow
   # Confirm with upstream before making this entry point
