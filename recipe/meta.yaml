@@ -11,9 +11,10 @@ source:
     - patches/0001-Remove-download-script-installation.patch
     - patches/0002-Silicence-warnigns-about-loading-DLC-in-light-mode.patch
     - patches/0003-Do-not-forcibly-adjust-Tensorflow-warnings.patch
+    - patches/0004-do-not-use_asscalar.patch
 
 build:
-  number: 2
+  number: 3
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   # Confirm with upstream before making this entry point
