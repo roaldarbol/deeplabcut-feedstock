@@ -8,10 +8,10 @@ source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
   sha256: 13c1df41c24015a302425cde4b0d3d9fa97fc0fe7e0b45efc82ae66398b29cbf
   patches:
-    - patches/0001-Remove-download-script-installation.patch
-    - patches/0002-Silicence-warnigns-about-loading-DLC-in-light-mode.patch
-    - patches/0003-Do-not-forcibly-adjust-Tensorflow-warnings.patch
-    - patches/0004-do-not-use_asscalar.patch
+    - patches/0001-Do-not-install-download-script.patch
+    - patches/0002-Silence-warnigns-about-tensorflow-lite.patch
+    - patches/0003-Do-not-modify-tensorflow-warnings.patch
+
 
 build:
   number: 0
@@ -25,10 +25,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
   run:
-    - python >=3.6
+    - python >=3.8
     - filterpy >=1.4.4
     - ruamel.yaml >=0.15.0
     - imgaug >=0.4.0
@@ -37,12 +37,12 @@ requirements:
     - networkx >=2.6
     - numpy >=1.18.5
     - opencv
-    - pandas >=1.0.1
-    - scikit-image >=0.17,<=1.0.0
+    - pandas >=1.0.1,!=1.5.0
+    - scikit-image >=0.17
     - scikit-learn >=1.0
     - scipy >=1.4
     - statsmodels >=0.11
-    - pytables >=3.7
+    - pytables >=3.7.0
     - tensorflow >=2.0
     - tensorpack >=0.11
     - tf_slim >=1.1.0

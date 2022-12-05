@@ -1,0 +1,36 @@
+From b973c9edf267f7ef834248f79a3c348cd097e4a3 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 5 Dec 2022 17:37:51 -0500
+Subject: [PATCH 2/3] Silence warnigns about tensorflow lite
+
+---
+ deeplabcut/__init__.py | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
+index 3db1e1d..5219f1a 100644
+--- a/deeplabcut/__init__.py
++++ b/deeplabcut/__init__.py
+@@ -18,8 +18,6 @@ DEBUG = True and "DEBUG" in os.environ and os.environ["DEBUG"]
+ from deeplabcut import DEBUG
+ from deeplabcut.version import __version__, VERSION
+ 
+-print(f"Loading DLC {VERSION}...")
+-
+ try:
+     from deeplabcut import generate_training_dataset
+     from deeplabcut import refine_training_dataset
+@@ -32,9 +30,7 @@ try:
+ 
+     from deeplabcut.utils.skeleton import SkeletonBuilder
+ except (ModuleNotFoundError, ImportError):
+-    print(
+-        "DLC loaded in light mode; you cannot use any GUI (labeling, relabeling and standalone GUI)"
+-    )
++    pass
+ 
+ from deeplabcut.create_project import (
+     create_new_project,
+-- 
+2.34.1
+
