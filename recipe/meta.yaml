@@ -1,4 +1,4 @@
-{% set version = "2.2.3" %}
+{% set version = "2.3.3" %}
 
 package:
   name: deeplabcut
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: 13c1df41c24015a302425cde4b0d3d9fa97fc0fe7e0b45efc82ae66398b29cbf
+  sha256: 7496c54a58730d0f7f67d4ff4d05bcc060109421991be671ca258808173a4983
   patches:
     - patches/0001-Do-not-install-download-script.patch
     - patches/0002-Silence-warnigns-about-tensorflow-lite.patch
