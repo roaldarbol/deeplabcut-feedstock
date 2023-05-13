@@ -1,3 +1,26 @@
+diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
+index 2da4b6a..1fa694f 100644
+--- a/deeplabcut/__init__.py
++++ b/deeplabcut/__init__.py
+@@ -72,18 +72,6 @@ from deeplabcut.utils import (
+     auxfun_videos,
+ )
+ 
+-try:
+-    from deeplabcut.pose_tracking_pytorch import transformer_reID
+-except ModuleNotFoundError as e:
+-    import warnings
+-
+-    warnings.warn(
+-        """
+-        As PyTorch is not installed, unsupervised identity learning will not be available.
+-        Please run `pip install torch`, or ignore this warning.
+-        """
+-    )
+-
+ from deeplabcut.utils.auxfun_videos import (
+     ShortenVideo,
+     DownSampleVideo,
 diff --git a/setup.py b/setup.py
 index ec5a14a..20ce194 100644
 --- a/setup.py
