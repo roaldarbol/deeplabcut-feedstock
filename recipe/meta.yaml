@@ -19,6 +19,8 @@ source:
     - patches/0008-Use-QFrame.Shpe.StyledPanel-instead-of-QFrame.Styled.patch
     # https://github.com/DeepLabCut/DeepLabCut/pull/2244
     - patches/0009-Use-QRegularExpression.patch
+    # https://github.com/DeepLabCut/DeepLabCut/issues/2245
+    - patches/0010-Use-native-dialogs-when-selecting-videos.patch
 
 build:
   number: 0
