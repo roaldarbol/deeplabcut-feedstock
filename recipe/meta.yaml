@@ -12,6 +12,7 @@ source:
     - patches/0002-Silence-warnings-about-DLC-lite-mode.patch
     - patches/0003-Do-not-modify-tensorflow-warnings.patch
     - patches/0004-Silence-warnings-about-missing-pytorch.patch
+    - patches/0005-Use-qtpy-instead-of-PySide6.patch
 
 build:
   number: 0
