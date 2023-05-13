@@ -1,0 +1,24 @@
+From 68abb958e045a4d17c76f5bf32b0bbe735f90c38 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sat, 13 May 2023 14:16:32 -0400
+Subject: [PATCH 10/11] Use native dialogs when selecting videos
+
+---
+ deeplabcut/gui/tabs/create_project.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/deeplabcut/gui/tabs/create_project.py b/deeplabcut/gui/tabs/create_project.py
+index cb7240b6..6091349e 100644
+--- a/deeplabcut/gui/tabs/create_project.py
++++ b/deeplabcut/gui/tabs/create_project.py
+@@ -109,7 +109,6 @@ class ProjectCreator(QtWidgets.QDialog):
+             self,
+             "Please select a folder",
+             self.loc_default,
+-            QtWidgets.QFileDialog.DontUseNativeDialog,
+         )
+         if not folder:
+             return
+-- 
+2.40.1
+

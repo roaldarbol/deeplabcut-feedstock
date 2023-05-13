@@ -1,4 +1,4 @@
-{% set version = "2.2.3" %}
+{% set version = "2.3.4" %}
 
 package:
   name: deeplabcut
@@ -6,12 +6,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: 13c1df41c24015a302425cde4b0d3d9fa97fc0fe7e0b45efc82ae66398b29cbf
+  sha256: 166f0cfd81a76fdcf3e880b6e862de3b3e7961d4f5fef5f3d9cbad180e9f7dae
   patches:
     - patches/0001-Do-not-install-download-script.patch
-    - patches/0002-Silence-warnigns-about-tensorflow-lite.patch
+    - patches/0002-Silence-warnings-about-DLC-lite-mode.patch
     - patches/0003-Do-not-modify-tensorflow-warnings.patch
-
+    - patches/0004-Silence-warnings-about-missing-pytorch.patch
+    - patches/0005-Use-qtpy-instead-of-PySide6.patch
+    - patches/0006-Remove-hard-dependency-on-torch.patch
+    - patches/0007-Lazy-Import-pyqt-and-default-to-PySide6.patch
+    # https://github.com/DeepLabCut/DeepLabCut/pull/2243
+    - patches/0008-Use-QFrame.Shpe.StyledPanel-instead-of-QFrame.Styled.patch
+    # https://github.com/DeepLabCut/DeepLabCut/pull/2244
+    - patches/0009-Use-QRegularExpression.patch
+    # https://github.com/DeepLabCut/DeepLabCut/issues/2245
+    - patches/0010-Use-native-dialogs-when-selecting-videos.patch
+    - patches/0011-add-outputs-for-multi-animal-model-export.patch
 
 build:
   number: 0
@@ -21,7 +31,7 @@ build:
   # https://github.com/DeepLabCut/DeepLabCut/pull/1547
   entry_points:
     - dlc = deeplabcut.cli:main
-    - deeplabcut = deeplabcut:launch_dlc
+    - deeplabcut = deeplabcut.gui.launch_script:launch_dlc
 
 requirements:
   host:
@@ -29,6 +39,7 @@ requirements:
     - pip
   run:
     - python >=3.8
+    - dlclibrary
     - filterpy >=1.4.4
     - ruamel.yaml >=0.15.0
     - imgaug >=0.4.0
@@ -43,12 +54,12 @@ requirements:
     - scipy >=1.4
     - statsmodels >=0.11
     - pytables >=3.7.0
-    - tensorflow >=2.0
     - tensorpack >=0.11
     - tf_slim >=1.1.0
     - tqdm
     - pyyaml
     - pillow >=7.1
+    - imageio-ffmpeg
 
 test:
   requires:
