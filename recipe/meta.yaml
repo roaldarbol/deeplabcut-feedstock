@@ -8,21 +8,21 @@ source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
   sha256: 166f0cfd81a76fdcf3e880b6e862de3b3e7961d4f5fef5f3d9cbad180e9f7dae
   patches:
-    -  0001-Do-not-install-download-script.patch
-    -  0002-Silence-warnings-about-DLC-lite-mode.patch
-    -  0003-Do-not-modify-tensorflow-warnings.patch
-    -  0004-Silence-warnings-about-missing-pytorch.patch
-    -  0005-Use-qtpy-instead-of-PySide6.patch
-    -  0006-Remove-hard-dependency-on-torch.patch
-    -  0007-Lazy-Import-pyqt-and-default-to-PySide6.patch
+    -  patches/0001-Do-not-install-download-script.patch
+    -  patches/0002-Silence-warnings-about-DLC-lite-mode.patch
+    -  patches/0003-Do-not-modify-tensorflow-warnings.patch
+    -  patches/0004-Silence-warnings-about-missing-pytorch.patch
+    -  patches/0005-Use-qtpy-instead-of-PySide6.patch
+    -  patches/0006-Remove-hard-dependency-on-torch.patch
+    -  patches/0007-Lazy-Import-pyqt-and-default-to-PySide6.patch
     # https://github.com/DeepLabCut/DeepLabCut/pull/2243
-    -  0008-Use-QFrame.Shpe.StyledPanel-instead-of-QFrame.Styled.patch
-    -  0009-Use-integers-for-style-pane-for-compatibility-with-P.patch
+    -  patches/0008-Use-QFrame.Shpe.StyledPanel-instead-of-QFrame.Styled.patch
+    -  patches/0009-Use-integers-for-style-pane-for-compatibility-with-P.patch
     # https://github.com/DeepLabCut/DeepLabCut/pull/2244
-    -  0010-Use-QRegularExpression.patch
+    -  patches/0010-Use-QRegularExpression.patch
     # https://github.com/DeepLabCut/DeepLabCut/issues/2245
-    -  0011-Use-native-dialogs-when-selecting-videos.patch
-    -  0012-add-outputs-for-multi-animal-model-export.patch
+    -  patches/0011-Use-native-dialogs-when-selecting-videos.patch
+    -  patches/0012-add-outputs-for-multi-animal-model-export.patch
 
 build:
   number: 1
