@@ -1,17 +1,17 @@
-From cbce17aa777eea51a36b78c7c221577818f9c920 Mon Sep 17 00:00:00 2001
+From e5a914565c050e32ad6bf92cc1c8a289ce74e58e Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
-Date: Mon, 5 Dec 2022 17:38:55 -0500
-Subject: [PATCH 3/3] Do not modify tensorflow warnings
+Date: Sat, 13 May 2023 12:43:09 -0400
+Subject: [PATCH 3/4] Do not modify tensorflow warnings
 
 ---
  deeplabcut/__init__.py | 4 ----
  1 file changed, 4 deletions(-)
 
 diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
-index 5219f1a..ccdbc66 100644
+index 44f4fa8..6e8aab7 100644
 --- a/deeplabcut/__init__.py
 +++ b/deeplabcut/__init__.py
-@@ -10,10 +10,6 @@ Licensed under GNU Lesser General Public License v3.0
+@@ -12,10 +12,6 @@
  
  import os
  
@@ -20,8 +20,8 @@ index 5219f1a..ccdbc66 100644
 -
 -tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
  DEBUG = True and "DEBUG" in os.environ and os.environ["DEBUG"]
- from deeplabcut import DEBUG
  from deeplabcut.version import __version__, VERSION
+ 
 -- 
-2.34.1
+2.40.1
 

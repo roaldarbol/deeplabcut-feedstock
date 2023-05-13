@@ -1,4 +1,4 @@
-{% set version = "2.3.3" %}
+{% set version = "2.3.4" %}
 
 package:
   name: deeplabcut
@@ -6,13 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: 7496c54a58730d0f7f67d4ff4d05bcc060109421991be671ca258808173a4983
+  sha256: 166f0cfd81a76fdcf3e880b6e862de3b3e7961d4f5fef5f3d9cbad180e9f7dae
   patches:
     - patches/0001-Do-not-install-download-script.patch
-    - patches/0002-Silence-warnigns-about-tensorflow-lite.patch
+    - patches/0002-Silence-warnings-about-DLC-lite-mode.patch
     - patches/0003-Do-not-modify-tensorflow-warnings.patch
-    - patches/remove_torch_requirement.patch
-
+    - patches/0004-Silence-warnings-about-missing-pytorch.patch
 
 build:
   number: 0
