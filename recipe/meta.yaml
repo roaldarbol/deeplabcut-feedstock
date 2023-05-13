@@ -21,6 +21,7 @@ source:
     - patches/0009-Use-QRegularExpression.patch
     # https://github.com/DeepLabCut/DeepLabCut/issues/2245
     - patches/0010-Use-native-dialogs-when-selecting-videos.patch
+    - patches/0011-add-outputs-for-multi-animal-model-export.patch
 
 build:
   number: 0

@@ -1,7 +1,7 @@
 From 4e9da042b79834a18d7119763eebcec6ff8cf6fe Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 12:56:24 -0400
-Subject: [PATCH 05/10] Use qtpy instead of PySide6
+Subject: [PATCH 05/11] Use qtpy instead of PySide6
 
 ---
  deeplabcut/__main__.py                          |  2 +-
@@ -30,7 +30,7 @@ Subject: [PATCH 05/10] Use qtpy instead of PySide6
  23 files changed, 49 insertions(+), 52 deletions(-)
 
 diff --git a/deeplabcut/__main__.py b/deeplabcut/__main__.py
-index 93b3f44..3d9f668 100644
+index 93b3f44b..3d9f6684 100644
 --- a/deeplabcut/__main__.py
 +++ b/deeplabcut/__main__.py
 @@ -10,7 +10,7 @@
@@ -43,7 +43,7 @@ index 93b3f44..3d9f668 100644
      lite = False
  except ModuleNotFoundError:
 diff --git a/deeplabcut/gui/__init__.py b/deeplabcut/gui/__init__.py
-index 484f139..0dba5a2 100644
+index 484f1393..0dba5a20 100644
 --- a/deeplabcut/gui/__init__.py
 +++ b/deeplabcut/gui/__init__.py
 @@ -11,7 +11,4 @@
@@ -55,7 +55,7 @@ index 484f139..0dba5a2 100644
 -
  BASE_DIR = os.path.dirname(__file__)
 diff --git a/deeplabcut/gui/components.py b/deeplabcut/gui/components.py
-index 42b7c62..da305c0 100644
+index 42b7c62b..da305c0b 100644
 --- a/deeplabcut/gui/components.py
 +++ b/deeplabcut/gui/components.py
 @@ -8,8 +8,8 @@
@@ -70,7 +70,7 @@ index 42b7c62..da305c0 100644
  from deeplabcut.gui.widgets import ConfigEditor
  
 diff --git a/deeplabcut/gui/launch_script.py b/deeplabcut/gui/launch_script.py
-index 6ada864..9350ede 100644
+index 6ada8641..9350edec 100644
 --- a/deeplabcut/gui/launch_script.py
 +++ b/deeplabcut/gui/launch_script.py
 @@ -22,11 +22,11 @@ import sys
@@ -89,7 +89,7 @@ index 6ada864..9350ede 100644
  
  def launch_dlc():
 diff --git a/deeplabcut/gui/tabs/analyze_videos.py b/deeplabcut/gui/tabs/analyze_videos.py
-index a273c3c..c577e7b 100644
+index a273c3c9..c577e7b7 100644
 --- a/deeplabcut/gui/tabs/analyze_videos.py
 +++ b/deeplabcut/gui/tabs/analyze_videos.py
 @@ -9,8 +9,8 @@
@@ -104,7 +104,7 @@ index a273c3c..c577e7b 100644
  from deeplabcut.gui.utils import move_to_separate_thread
  from deeplabcut.gui.widgets import ConfigEditor
 diff --git a/deeplabcut/gui/tabs/create_project.py b/deeplabcut/gui/tabs/create_project.py
-index a1f43a0..f35d1b0 100644
+index a1f43a05..f35d1b0a 100644
 --- a/deeplabcut/gui/tabs/create_project.py
 +++ b/deeplabcut/gui/tabs/create_project.py
 @@ -16,7 +16,7 @@ from deeplabcut.utils import auxiliaryfunctions
@@ -117,7 +117,7 @@ index a1f43a0..f35d1b0 100644
  
  class ProjectCreator(QtWidgets.QDialog):
 diff --git a/deeplabcut/gui/tabs/create_training_dataset.py b/deeplabcut/gui/tabs/create_training_dataset.py
-index 4cae29b..1c09072 100644
+index 4cae29b0..1c09072e 100644
 --- a/deeplabcut/gui/tabs/create_training_dataset.py
 +++ b/deeplabcut/gui/tabs/create_training_dataset.py
 @@ -10,9 +10,9 @@
@@ -134,7 +134,7 @@ index 4cae29b..1c09072 100644
  from deeplabcut.gui.dlc_params import DLCParams
  from deeplabcut.gui.components import (
 diff --git a/deeplabcut/gui/tabs/create_videos.py b/deeplabcut/gui/tabs/create_videos.py
-index 3242081..caeaa7b 100644
+index 32420818..caeaa7b7 100644
 --- a/deeplabcut/gui/tabs/create_videos.py
 +++ b/deeplabcut/gui/tabs/create_videos.py
 @@ -8,8 +8,8 @@
@@ -149,7 +149,7 @@ index 3242081..caeaa7b 100644
  from deeplabcut.gui.components import (
      BodypartListWidget,
 diff --git a/deeplabcut/gui/tabs/evaluate_network.py b/deeplabcut/gui/tabs/evaluate_network.py
-index 37c7d05..44624f7 100644
+index 37c7d055..44624f7e 100644
 --- a/deeplabcut/gui/tabs/evaluate_network.py
 +++ b/deeplabcut/gui/tabs/evaluate_network.py
 @@ -14,8 +14,8 @@ from matplotlib.backends.backend_qt5agg import (
@@ -164,7 +164,7 @@ index 37c7d05..44624f7 100644
  import deeplabcut
  from deeplabcut.utils.auxiliaryfunctions import get_evaluation_folder
 diff --git a/deeplabcut/gui/tabs/extract_frames.py b/deeplabcut/gui/tabs/extract_frames.py
-index 089a332..8cd39f4 100644
+index 089a3321..8cd39f4a 100644
 --- a/deeplabcut/gui/tabs/extract_frames.py
 +++ b/deeplabcut/gui/tabs/extract_frames.py
 @@ -10,8 +10,8 @@
@@ -179,7 +179,7 @@ index 089a332..8cd39f4 100644
  from deeplabcut.gui.dlc_params import DLCParams
  from deeplabcut.gui.components import (
 diff --git a/deeplabcut/gui/tabs/extract_outlier_frames.py b/deeplabcut/gui/tabs/extract_outlier_frames.py
-index 46a1bcd..33d2ebe 100644
+index 46a1bcd1..33d2ebe5 100644
 --- a/deeplabcut/gui/tabs/extract_outlier_frames.py
 +++ b/deeplabcut/gui/tabs/extract_outlier_frames.py
 @@ -8,8 +8,8 @@
@@ -194,7 +194,7 @@ index 46a1bcd..33d2ebe 100644
  from deeplabcut.gui.dlc_params import DLCParams
  from deeplabcut.gui.components import (
 diff --git a/deeplabcut/gui/tabs/label_frames.py b/deeplabcut/gui/tabs/label_frames.py
-index 61d4722..296a1dd 100644
+index 61d4722b..296a1ddd 100644
 --- a/deeplabcut/gui/tabs/label_frames.py
 +++ b/deeplabcut/gui/tabs/label_frames.py
 @@ -9,8 +9,8 @@
@@ -209,7 +209,7 @@ index 61d4722..296a1dd 100644
  from deeplabcut.gui.widgets import launch_napari
  
 diff --git a/deeplabcut/gui/tabs/manage_project.py b/deeplabcut/gui/tabs/manage_project.py
-index 932adcf..69be014 100644
+index 932adcf8..69be0146 100644
 --- a/deeplabcut/gui/tabs/manage_project.py
 +++ b/deeplabcut/gui/tabs/manage_project.py
 @@ -9,8 +9,8 @@
@@ -224,7 +224,7 @@ index 932adcf..69be014 100644
      QFileDialog,
      QLabel,
 diff --git a/deeplabcut/gui/tabs/modelzoo.py b/deeplabcut/gui/tabs/modelzoo.py
-index 061df6e..2b61376 100644
+index 061df6e4..2b61376b 100644
 --- a/deeplabcut/gui/tabs/modelzoo.py
 +++ b/deeplabcut/gui/tabs/modelzoo.py
 @@ -9,9 +9,9 @@
@@ -241,7 +241,7 @@ index 061df6e..2b61376 100644
      DefaultTab,
      VideoSelectionWidget,
 diff --git a/deeplabcut/gui/tabs/open_project.py b/deeplabcut/gui/tabs/open_project.py
-index 741e30b..475a7e5 100644
+index 741e30b0..475a7e51 100644
 --- a/deeplabcut/gui/tabs/open_project.py
 +++ b/deeplabcut/gui/tabs/open_project.py
 @@ -10,9 +10,9 @@
@@ -258,7 +258,7 @@ index 741e30b..475a7e5 100644
  
  class OpenProject(QtWidgets.QDialog):
 diff --git a/deeplabcut/gui/tabs/refine_tracklets.py b/deeplabcut/gui/tabs/refine_tracklets.py
-index 962319f..0e716f6 100644
+index 962319f5..0e716f64 100644
 --- a/deeplabcut/gui/tabs/refine_tracklets.py
 +++ b/deeplabcut/gui/tabs/refine_tracklets.py
 @@ -10,8 +10,8 @@
@@ -273,7 +273,7 @@ index 962319f..0e716f6 100644
  from deeplabcut.gui.widgets import ConfigEditor
  from deeplabcut.gui.components import (
 diff --git a/deeplabcut/gui/tabs/train_network.py b/deeplabcut/gui/tabs/train_network.py
-index 0337d59..123d931 100644
+index 0337d59d..123d931f 100644
 --- a/deeplabcut/gui/tabs/train_network.py
 +++ b/deeplabcut/gui/tabs/train_network.py
 @@ -11,9 +11,9 @@
@@ -290,7 +290,7 @@ index 0337d59..123d931 100644
  from deeplabcut.gui.components import (
      DefaultTab,
 diff --git a/deeplabcut/gui/tabs/unsupervised_id_tracking.py b/deeplabcut/gui/tabs/unsupervised_id_tracking.py
-index 376c08d..6a28332 100644
+index 376c08df..6a28332f 100644
 --- a/deeplabcut/gui/tabs/unsupervised_id_tracking.py
 +++ b/deeplabcut/gui/tabs/unsupervised_id_tracking.py
 @@ -9,8 +9,8 @@
@@ -305,7 +305,7 @@ index 376c08d..6a28332 100644
  from deeplabcut.gui.components import (
      DefaultTab,
 diff --git a/deeplabcut/gui/tabs/video_editor.py b/deeplabcut/gui/tabs/video_editor.py
-index cec1e92..4a0a7c3 100644
+index cec1e920..4a0a7c39 100644
 --- a/deeplabcut/gui/tabs/video_editor.py
 +++ b/deeplabcut/gui/tabs/video_editor.py
 @@ -10,8 +10,8 @@
@@ -320,7 +320,7 @@ index cec1e92..4a0a7c3 100644
  from deeplabcut.gui.components import (
      DefaultTab,
 diff --git a/deeplabcut/gui/tracklet_toolbox.py b/deeplabcut/gui/tracklet_toolbox.py
-index ad8e7f7..40c8537 100644
+index ad8e7f74..40c8537e 100644
 --- a/deeplabcut/gui/tracklet_toolbox.py
 +++ b/deeplabcut/gui/tracklet_toolbox.py
 @@ -20,8 +20,8 @@ from deeplabcut.utils.auxfun_videos import VideoReader
@@ -335,7 +335,7 @@ index ad8e7f7..40c8537 100644
  
  class DraggablePoint:
 diff --git a/deeplabcut/gui/utils.py b/deeplabcut/gui/utils.py
-index cd5369f..c960126 100644
+index cd5369fb..c9601266 100644
 --- a/deeplabcut/gui/utils.py
 +++ b/deeplabcut/gui/utils.py
 @@ -8,7 +8,7 @@
@@ -348,7 +348,7 @@ index cd5369f..c960126 100644
  
  class Worker(QtCore.QObject):
 diff --git a/deeplabcut/gui/widgets.py b/deeplabcut/gui/widgets.py
-index 274e9cf..b9a693e 100644
+index 274e9cf7..b9a693ef 100644
 --- a/deeplabcut/gui/widgets.py
 +++ b/deeplabcut/gui/widgets.py
 @@ -25,8 +25,8 @@ from matplotlib.backends.backend_qt5agg import (
@@ -363,7 +363,7 @@ index 274e9cf..b9a693e 100644
  from skimage import io
  
 diff --git a/deeplabcut/gui/window.py b/deeplabcut/gui/window.py
-index 0fb552b..722b682 100644
+index 0fb552bf..722b6824 100644
 --- a/deeplabcut/gui/window.py
 +++ b/deeplabcut/gui/window.py
 @@ -22,11 +22,11 @@ from deeplabcut import auxiliaryfunctions, VERSION
