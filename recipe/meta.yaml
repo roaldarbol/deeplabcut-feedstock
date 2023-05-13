@@ -22,7 +22,7 @@ build:
   # https://github.com/DeepLabCut/DeepLabCut/pull/1547
   entry_points:
     - dlc = deeplabcut.cli:main
-    - deeplabcut = deeplabcut:launch_dlc
+    - deeplabcut = deeplabcut.gui.launch_script:launch_dlc
 
 requirements:
   host:
@@ -45,6 +45,7 @@ requirements:
     - scipy >=1.4
     - statsmodels >=0.11
     - pytables >=3.7.0
+    - tensorpack >=0.11
     - tf_slim >=1.1.0
     - tqdm
     - pyyaml
