@@ -1,7 +1,7 @@
 From e5a914565c050e32ad6bf92cc1c8a289ce74e58e Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 12:43:09 -0400
-Subject: [PATCH 3/5] Do not modify tensorflow warnings
+Subject: [PATCH 3/6] Do not modify tensorflow warnings
 
 ---
  deeplabcut/__init__.py | 4 ----

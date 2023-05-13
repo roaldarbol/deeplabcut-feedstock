@@ -1,0 +1,24 @@
+From 530dedcbb7d0c5b62ad052d58ea6c1a744e70439 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sat, 13 May 2023 13:03:35 -0400
+Subject: [PATCH 6/6] Remove hard dependency on torch
+
+---
+ setup.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index df946e8..6c23fdb 100644
+--- a/setup.py
++++ b/setup.py
+@@ -40,7 +40,6 @@ setuptools.setup(
+         "scipy>=1.4",
+         "statsmodels>=0.11",
+         "tables>=3.7.0",
+-        "torch<=1.12",
+         "tensorpack>=0.11",
+         "tf_slim>=1.1.0",
+         "tqdm",
+-- 
+2.40.1
+

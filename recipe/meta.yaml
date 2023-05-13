@@ -13,6 +13,7 @@ source:
     - patches/0003-Do-not-modify-tensorflow-warnings.patch
     - patches/0004-Silence-warnings-about-missing-pytorch.patch
     - patches/0005-Use-qtpy-instead-of-PySide6.patch
+    - patches/0006-Remove-hard-dependency-on-torch.patch
 
 build:
   number: 0
