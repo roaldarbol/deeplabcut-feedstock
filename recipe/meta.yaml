@@ -11,6 +11,7 @@ source:
     - patches/0001-Do-not-install-download-script.patch
     - patches/0002-Silence-warnigns-about-tensorflow-lite.patch
     - patches/0003-Do-not-modify-tensorflow-warnings.patch
+    - patches/remove_torch_requirement.patch
 
 
 build:
@@ -29,6 +30,7 @@ requirements:
     - pip
   run:
     - python >=3.8
+    - dlclibrary
     - filterpy >=1.4.4
     - ruamel.yaml >=0.15.0
     - imgaug >=0.4.0
@@ -43,13 +45,11 @@ requirements:
     - scipy >=1.4
     - statsmodels >=0.11
     - pytables >=3.7.0
-    - tensorflow >=2.0
-    - tensorpack >=0.11
     - tf_slim >=1.1.0
     - tqdm
     - pyyaml
     - pillow >=7.1
-    - dlclibrary
+    - imageio-ffmpeg
 
 test:
   requires:
