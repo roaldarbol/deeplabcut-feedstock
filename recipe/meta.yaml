@@ -61,6 +61,10 @@ requirements:
     - pyyaml
     - pillow >=7.1
     - imageio-ffmpeg
+  run_constrained:
+    - napari-deeplabcut >=0.0.9
+    # not to sure on this lower bound, but lets go with it
+    - napari >=0.4.0
 
 test:
   requires:
