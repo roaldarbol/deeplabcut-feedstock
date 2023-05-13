@@ -1,7 +1,7 @@
 From 530dedcbb7d0c5b62ad052d58ea6c1a744e70439 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 13:03:35 -0400
-Subject: [PATCH 06/11] Remove hard dependency on torch
+Subject: [PATCH 06/12] Remove hard dependency on torch
 
 ---
  setup.py | 1 -
