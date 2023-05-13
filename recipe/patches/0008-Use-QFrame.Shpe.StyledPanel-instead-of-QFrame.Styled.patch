@@ -1,4 +1,4 @@
-From 156cde53f56dc45e776de35b4650d4a203cc05be Mon Sep 17 00:00:00 2001
+From 44c52ec5e381981764e7b3e49516c6a556e73444 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 13:40:31 -0400
 Subject: [PATCH 08/12] Use QFrame.Shpe.StyledPanel instead of

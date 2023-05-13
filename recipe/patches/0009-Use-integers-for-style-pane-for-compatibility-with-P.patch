@@ -1,4 +1,4 @@
-From c33a9684b266fb798e3169435ecdfad7a6cf40b2 Mon Sep 17 00:00:00 2001
+From fe90baeee3b1a66ee68fb6f89d00e52644aa9309 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 18:34:58 -0400
 Subject: [PATCH 09/12] Use integers for style pane for compatibility with PyQt

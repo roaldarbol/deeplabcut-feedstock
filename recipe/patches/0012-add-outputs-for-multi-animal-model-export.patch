@@ -1,4 +1,4 @@
-From 7995b9b0433762df109014f6613bc405f43f1f81 Mon Sep 17 00:00:00 2001
+From 47f1320d01e1f6999bab98fb15e46c45eb6abde9 Mon Sep 17 00:00:00 2001
 From: jefromson <66144986+jefromson@users.noreply.github.com>
 Date: Sat, 13 May 2023 15:49:22 -0400
 Subject: [PATCH 12/12] add outputs for multi-animal  model export
