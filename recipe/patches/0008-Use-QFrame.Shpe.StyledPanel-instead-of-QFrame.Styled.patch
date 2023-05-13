@@ -1,0 +1,62 @@
+From 156cde53f56dc45e776de35b4650d4a203cc05be Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sat, 13 May 2023 13:40:31 -0400
+Subject: [PATCH 8/9] Use QFrame.Shpe.StyledPanel instead of QFrame.StyledPanel
+
+---
+ deeplabcut/gui/tabs/create_project.py | 4 ++--
+ deeplabcut/gui/tabs/open_project.py   | 2 +-
+ deeplabcut/gui/widgets.py             | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/deeplabcut/gui/tabs/create_project.py b/deeplabcut/gui/tabs/create_project.py
+index f35d1b0..cb7240b 100644
+--- a/deeplabcut/gui/tabs/create_project.py
++++ b/deeplabcut/gui/tabs/create_project.py
+@@ -43,7 +43,7 @@ class ProjectCreator(QtWidgets.QDialog):
+ 
+     def lay_out_user_frame(self):
+         user_frame = QtWidgets.QFrame(self)
+-        user_frame.setFrameShape(user_frame.StyledPanel)
++        user_frame.setFrameShape(user_frame.Shape.StyledPanel)
+         user_frame.setLineWidth(0.5)
+ 
+         proj_label = QtWidgets.QLabel("Project:", user_frame)
+@@ -193,7 +193,7 @@ class ProjectCreator(QtWidgets.QDialog):
+                     child.setDisabled(True)
+                 else:
+                     child.setDisabled(False)
+-    
++
+     def update_project_name(self, text):
+         self.proj_default = text
+         self.update_project_location()
+diff --git a/deeplabcut/gui/tabs/open_project.py b/deeplabcut/gui/tabs/open_project.py
+index 475a7e5..84d3813 100644
+--- a/deeplabcut/gui/tabs/open_project.py
++++ b/deeplabcut/gui/tabs/open_project.py
+@@ -36,7 +36,7 @@ class OpenProject(QtWidgets.QDialog):
+ 
+     def layout_open(self):
+         self.open_frame = QtWidgets.QFrame(self)
+-        self.open_frame.setFrameShape(self.open_frame.StyledPanel)
++        self.open_frame.setFrameShape(self.open_frame.Shape.StyledPanel)
+         self.open_frame.setLineWidth(0.5)
+         self.open_frame.setMinimumWidth(600)
+ 
+diff --git a/deeplabcut/gui/widgets.py b/deeplabcut/gui/widgets.py
+index b9a693e..b55a17e 100644
+--- a/deeplabcut/gui/widgets.py
++++ b/deeplabcut/gui/widgets.py
+@@ -128,7 +128,7 @@ class DragDropListView(QtWidgets.QListView):
+ class ItemSelectionFrame(QtWidgets.QFrame):
+     def __init__(self, items, parent=None):
+         super(ItemSelectionFrame, self).__init__(parent)
+-        self.setFrameShape(self.StyledPanel)
++        self.setFrameShape(self.Shape.StyledPanel)
+         self.setLineWidth(0.5)
+ 
+         self.select_box = QtWidgets.QCheckBox("Files")
+-- 
+2.40.1
+

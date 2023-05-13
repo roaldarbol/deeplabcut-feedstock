@@ -1,0 +1,37 @@
+From c968e65100c5cd0dc9e3dd437e715981f5098515 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sat, 13 May 2023 13:29:51 -0400
+Subject: [PATCH 7/9] Lazy Import pyqt and default to PySide6
+
+---
+ deeplabcut/gui/launch_script.py | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/deeplabcut/gui/launch_script.py b/deeplabcut/gui/launch_script.py
+index 9350ede..f4d8d64 100644
+--- a/deeplabcut/gui/launch_script.py
++++ b/deeplabcut/gui/launch_script.py
+@@ -22,14 +22,16 @@ import sys
+ import os
+ import logging
+ 
+-import qtpy.QtWidgets as QtWidgets
+-import qdarkstyle
+ from deeplabcut.gui import BASE_DIR
+-from qtpy.QtCore import Qt
+-from qtpy.QtGui import QIcon, QPixmap
+ 
+ 
+ def launch_dlc():
++    os.environ['QT_API'] = os.environ.get('QT_API', 'PySide6')
++    # LazyImport so as not to trigger things here
++    import qtpy.QtWidgets as QtWidgets
++    from qtpy.QtCore import Qt
++    from qtpy.QtGui import QIcon, QPixmap
++    import qdarkstyle
+     app = QtWidgets.QApplication(sys.argv)
+     app.setWindowIcon(QIcon(os.path.join(BASE_DIR, "assets", "logo.png")))
+     screen_size = app.screens()[0].size()
+-- 
+2.40.1
+

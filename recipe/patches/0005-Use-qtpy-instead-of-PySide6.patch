@@ -1,7 +1,7 @@
 From 4e9da042b79834a18d7119763eebcec6ff8cf6fe Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 12:56:24 -0400
-Subject: [PATCH 5/6] Use qtpy instead of PySide6
+Subject: [PATCH 5/9] Use qtpy instead of PySide6
 
 ---
  deeplabcut/__main__.py                          |  2 +-

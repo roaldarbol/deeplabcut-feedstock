@@ -1,7 +1,7 @@
 From 1c38b08a87faa43dc5f43cd02648aa05a0af4846 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 12:42:33 -0400
-Subject: [PATCH 2/6] Silence warnings about DLC lite mode
+Subject: [PATCH 2/9] Silence warnings about DLC lite mode
 
 ---
  deeplabcut/__init__.py | 5 +----
