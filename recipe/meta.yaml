@@ -49,6 +49,7 @@ requirements:
     - tqdm
     - pyyaml
     - pillow >=7.1
+    - dlclibrary
 
 test:
   requires:
