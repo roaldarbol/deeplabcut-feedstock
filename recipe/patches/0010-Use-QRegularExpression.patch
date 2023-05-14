@@ -1,7 +1,7 @@
 From 5ddabb9266f4a21c3dc4ea3eebc69ad06fb50a37 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 13:41:31 -0400
-Subject: [PATCH 10/12] Use QRegularExpression
+Subject: [PATCH 10/14] Use QRegularExpression
 
 ---
  deeplabcut/gui/tabs/modelzoo.py | 4 ++--

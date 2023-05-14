@@ -1,7 +1,7 @@
 From fe90baeee3b1a66ee68fb6f89d00e52644aa9309 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 18:34:58 -0400
-Subject: [PATCH 09/12] Use integers for style pane for compatibility with PyQt
+Subject: [PATCH 09/14] Use integers for style pane for compatibility with PyQt
 
 ---
  deeplabcut/gui/tabs/create_project.py | 2 +-
