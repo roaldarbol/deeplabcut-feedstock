@@ -23,9 +23,12 @@ source:
     # https://github.com/DeepLabCut/DeepLabCut/issues/2245
     -  patches/0011-Use-native-dialogs-when-selecting-videos.patch
     -  patches/0012-add-outputs-for-multi-animal-model-export.patch
+    - patches/0013-Use-PySide2-since-PySide6-is-too-bleeding-edge-on-co.patch
+    # https://github.com/DeepLabCut/DeepLabCut/pull/2247
+    - patches/0014-Small-patch-for-PySide6-compatibility.patch
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps
   # Confirm with upstream before making this entry point
