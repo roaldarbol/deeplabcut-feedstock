@@ -1,7 +1,7 @@
-From 2c3b276c9159d779ce2477bf3622c64a196526c6 Mon Sep 17 00:00:00 2001
+From 81bc822ffbdb9424bc05ea652b6206927edc2056 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 14:16:32 -0400
-Subject: [PATCH 11/14] Use native dialogs when selecting videos
+Subject: [PATCH 11/13] Use native dialogs when selecting videos
 
 ---
  deeplabcut/gui/tabs/create_project.py | 1 -

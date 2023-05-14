@@ -1,12 +1,12 @@
-From a80b489e86693e6b34bd1683943ff9af33d74ccc Mon Sep 17 00:00:00 2001
+From 29443c1d33f85fc9b7556ad1f3ed82b8daf76d19 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 13:29:51 -0400
-Subject: [PATCH 07/14] Lazy Import pyqt and default to PySide6
+Subject: [PATCH 07/13] Lazy Import pyqt and default to PySide6
 
 ---
- deeplabcut/__init__.py          |  6 ------
- deeplabcut/gui/launch_script.py | 10 ++++++----
- 2 files changed, 6 insertions(+), 10 deletions(-)
+ deeplabcut/__init__.py          | 6 ------
+ deeplabcut/gui/launch_script.py | 9 +++++----
+ 2 files changed, 5 insertions(+), 10 deletions(-)
 
 diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
 index b303b53f..d284658e 100644
@@ -27,10 +27,10 @@ index b303b53f..d284658e 100644
      pass
  
 diff --git a/deeplabcut/gui/launch_script.py b/deeplabcut/gui/launch_script.py
-index 9350edec..f4d8d644 100644
+index 9350edec..c294f729 100644
 --- a/deeplabcut/gui/launch_script.py
 +++ b/deeplabcut/gui/launch_script.py
-@@ -22,14 +22,16 @@ import sys
+@@ -22,14 +22,15 @@ import sys
  import os
  import logging
  
@@ -42,7 +42,6 @@ index 9350edec..f4d8d644 100644
  
  
  def launch_dlc():
-+    os.environ['QT_API'] = os.environ.get('QT_API', 'PySide6')
 +    # LazyImport so as not to trigger things here
 +    import qtpy.QtWidgets as QtWidgets
 +    from qtpy.QtCore import Qt
