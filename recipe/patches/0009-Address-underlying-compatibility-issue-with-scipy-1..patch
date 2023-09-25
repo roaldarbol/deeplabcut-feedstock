@@ -1,0 +1,70 @@
+From 08801a80437aee36b18b67cc268cd1a0b9c5279d Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 25 Sep 2023 03:02:31 -0400
+Subject: [PATCH 9/9] Address underlying compatibility issue with scipy 1.11.0
+
+See warning in scipy 1.9's documentation.
+See warning in https://docs.scipy.org/doc/scipy-1.9.0/reference/generated/scipy.stats.mode.html
+
+The SPEC0 suggests that scipy 1.8 be dropped in 2024, but I think it is
+OK to drop it a little early.
+
+If you don't want to drop it, we could add a version check for the
+keyword argument, but that seems a little much.
+
+The keyword argument `keepdims` was added in scipy 1.9
+
+xref: https://github.com/DeepLabCut/DeepLabCut/pull/2290
+---
+ deeplabcut/refine_training_dataset/stitch.py | 7 ++++++-
+ requirements.txt                             | 2 +-
+ setup.py                                     | 2 +-
+ 3 files changed, 8 insertions(+), 3 deletions(-)
+
+diff --git a/deeplabcut/refine_training_dataset/stitch.py b/deeplabcut/refine_training_dataset/stitch.py
+index 4c8daa0..54ce652 100644
+--- a/deeplabcut/refine_training_dataset/stitch.py
++++ b/deeplabcut/refine_training_dataset/stitch.py
+@@ -135,7 +135,12 @@ class Tracklet:
+     def identity(self):
+         """Return the average predicted identity of all Tracklet detections."""
+         try:
+-            return mode(self.data[..., 3], axis=None, nan_policy="omit")[0][0]
++            return mode(
++                self.data[..., 3],
++                axis=None,
++                nan_policy="omit",
++                keepdims=False,
++            )[0]
+         except IndexError:
+             return -1
+ 
+diff --git a/requirements.txt b/requirements.txt
+index cc7a511..57aec6e 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -13,7 +13,7 @@ pandas>=1.0.1,!=1.5.0
+ pyyaml
+ scikit-image>=0.17
+ scikit-learn>=1.0
+-scipy>=1.4,<1.11.0
++scipy>=1.9
+ statsmodels>=0.11
+ tensorflow>=2.0,<2.13.0
+ tables==3.7.0
+diff --git a/setup.py b/setup.py
+index 5ea42ab..d5a8248 100644
+--- a/setup.py
++++ b/setup.py
+@@ -37,7 +37,7 @@ setuptools.setup(
+         "pandas>=1.0.1,!=1.5.0",
+         "scikit-image>=0.17",
+         "scikit-learn>=1.0",
+-        "scipy>=1.4,<1.11.0",
++        "scipy>=1.9",
+         "statsmodels>=0.11",
+         "tables>=3.7.0",
+         "tensorpack>=0.11",
+-- 
+2.40.1
+
