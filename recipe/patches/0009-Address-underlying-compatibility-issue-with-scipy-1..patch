@@ -17,9 +17,8 @@ The keyword argument `keepdims` was added in scipy 1.9
 xref: https://github.com/DeepLabCut/DeepLabCut/pull/2290
 ---
  deeplabcut/refine_training_dataset/stitch.py | 7 ++++++-
- requirements.txt                             | 2 +-
  setup.py                                     | 2 +-
- 3 files changed, 8 insertions(+), 3 deletions(-)
+ 2 files changed, 7 insertions(+), 2 deletions(-)
 
 diff --git a/deeplabcut/refine_training_dataset/stitch.py b/deeplabcut/refine_training_dataset/stitch.py
 index 4c8daa0..54ce652 100644
@@ -39,19 +38,6 @@ index 4c8daa0..54ce652 100644
          except IndexError:
              return -1
  
-diff --git a/requirements.txt b/requirements.txt
-index cc7a511..57aec6e 100644
---- a/requirements.txt
-+++ b/requirements.txt
-@@ -13,7 +13,7 @@ pandas>=1.0.1,!=1.5.0
- pyyaml
- scikit-image>=0.17
- scikit-learn>=1.0
--scipy>=1.4,<1.11.0
-+scipy>=1.9
- statsmodels>=0.11
- tensorflow>=2.0,<2.13.0
- tables==3.7.0
 diff --git a/setup.py b/setup.py
 index 5ea42ab..d5a8248 100644
 --- a/setup.py
