@@ -16,8 +16,6 @@ source:
     - patches/0006-Remove-hard-dependency-on-torch.patch
     - patches/0007-Lazy-Import-pyqt-and-default-to-PySide6.patch
     - patches/0008-add-outputs-for-multi-animal-model-export.patch
-    # https://github.com/DeepLabCut/DeepLabCut/pull/2396
-    - patches/0009-Address-underlying-compatibility-issue-with-scipy-1..patch
 
 build:
   number: 0
