@@ -1,4 +1,4 @@
-{% set version = "2.3.6" %}
+{% set version = "2.3.7" %}
 
 package:
   name: deeplabcut
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: c4479f05b3c917a6198c1abbb6ea0ac580ce4b02fe1d068e0215b1984aa8e385
+  sha256: 9168d97bbaf31f3b04ec16b33a33101d298a3f4416f343fd9134d85af2040f86
   patches:
     - patches/0001-Do-not-install-download-script.patch
     - patches/0002-Silence-warnings-about-DLC-lite-mode.patch
@@ -16,8 +16,6 @@ source:
     - patches/0006-Remove-hard-dependency-on-torch.patch
     - patches/0007-Lazy-Import-pyqt-and-default-to-PySide6.patch
     - patches/0008-add-outputs-for-multi-animal-model-export.patch
-    # https://github.com/DeepLabCut/DeepLabCut/pull/2396
-    - patches/0009-Address-underlying-compatibility-issue-with-scipy-1..patch
 
 build:
   number: 0
