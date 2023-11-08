@@ -1,7 +1,7 @@
-From 547cf0e241b8d4c704c04ace8dd844ac1743a856 Mon Sep 17 00:00:00 2001
+From 88d8fc8b0c9f4a9c526c23b3c635930c33a28f5f Mon Sep 17 00:00:00 2001
 From: jefromson <66144986+jefromson@users.noreply.github.com>
 Date: Sat, 13 May 2023 15:49:22 -0400
-Subject: [PATCH 8/9] add outputs for multi-animal model export
+Subject: [PATCH 8/8] add outputs for multi-animal model export
 
 I found that these outputs were required to successfully export a multi-animal tracking model.
 ---
@@ -9,7 +9,7 @@ I found that these outputs were required to successfully export a multi-animal t
  1 file changed, 18 insertions(+), 8 deletions(-)
 
 diff --git a/deeplabcut/pose_estimation_tensorflow/export.py b/deeplabcut/pose_estimation_tensorflow/export.py
-index ab9d2d9..e6a790d 100644
+index ab9d2d96..e6a790dd 100644
 --- a/deeplabcut/pose_estimation_tensorflow/export.py
 +++ b/deeplabcut/pose_estimation_tensorflow/export.py
 @@ -175,16 +175,26 @@ def load_model(cfg, shuffle=1, trainingsetindex=0, TFGPUinference=True, modelpre

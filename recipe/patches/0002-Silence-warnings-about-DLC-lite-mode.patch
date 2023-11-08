@@ -1,14 +1,14 @@
-From c84a9f579e5a14f28dceee8135919eebae21141e Mon Sep 17 00:00:00 2001
+From 2122a2e15107242288f1c51b1ca05d2753804fc6 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Mon, 25 Sep 2023 02:18:08 -0400
-Subject: [PATCH 2/9] Silence warnings about DLC lite mode
+Subject: [PATCH 2/8] Silence warnings about DLC lite mode
 
 ---
  deeplabcut/__init__.py | 5 +----
  1 file changed, 1 insertion(+), 4 deletions(-)
 
 diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
-index 2da4b6a..44f4fa8 100644
+index 2da4b6a9..44f4fa8b 100644
 --- a/deeplabcut/__init__.py
 +++ b/deeplabcut/__init__.py
 @@ -19,7 +19,6 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)

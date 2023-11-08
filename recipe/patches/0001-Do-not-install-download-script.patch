@@ -1,18 +1,18 @@
-From f87f7aa0a4ae740e9be24e22a44880257a2f0c03 Mon Sep 17 00:00:00 2001
+From 5885681123cb56e985c3d1ce8a6bbf883adcaf69 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Mon, 25 Sep 2023 02:17:35 -0400
-Subject: [PATCH 1/9] Do not install download script
+Subject: [PATCH 1/8] Do not install download script
 
 ---
  setup.py | 1 -
  1 file changed, 1 deletion(-)
 
 diff --git a/setup.py b/setup.py
-index 9c08449..e676025 100644
+index 7f0582ba..3c6233c1 100644
 --- a/setup.py
 +++ b/setup.py
-@@ -59,7 +59,6 @@ setuptools.setup(
-         "apple_mchips": ["tensorflow-macos<2.13.0","tensorflow-metal"],
+@@ -61,7 +61,6 @@ setuptools.setup(
+         "apple_mchips": ["tensorflow-macos<2.13.0", "tensorflow-metal"],
          "modelzoo": ["huggingface_hub"],
      },
 -    scripts=["deeplabcut/pose_estimation_tensorflow/models/pretrained/download.sh"],
