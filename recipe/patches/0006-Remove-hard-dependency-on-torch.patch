@@ -1,18 +1,18 @@
-From 550fecae9ab8fdf3c3d25202b8edb91a629da0e4 Mon Sep 17 00:00:00 2001
+From a042456ea2eacaf628fb3077ba63b495cad862fa Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Mon, 25 Sep 2023 02:21:36 -0400
-Subject: [PATCH 6/9] Remove hard dependency on torch
+Subject: [PATCH 6/8] Remove hard dependency on torch
 
 ---
  setup.py | 1 -
  1 file changed, 1 deletion(-)
 
 diff --git a/setup.py b/setup.py
-index e676025..5ea42ab 100644
+index 3c6233c1..18a172da 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -40,7 +40,6 @@ setuptools.setup(
-         "scipy>=1.4,<1.11.0",
+         "scipy>=1.9",
          "statsmodels>=0.11",
          "tables>=3.7.0",
 -        "torch<=1.12",

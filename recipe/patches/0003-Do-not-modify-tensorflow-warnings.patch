@@ -1,14 +1,14 @@
-From 4d17159564817d0c037ae44d99df466e77b5ab34 Mon Sep 17 00:00:00 2001
+From 1f3f333b3a2ca132122e0891e968333c12df46fd Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
 Date: Sat, 13 May 2023 12:43:09 -0400
-Subject: [PATCH 3/9] Do not modify tensorflow warnings
+Subject: [PATCH 3/8] Do not modify tensorflow warnings
 
 ---
  deeplabcut/__init__.py | 4 ----
  1 file changed, 4 deletions(-)
 
 diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
-index 44f4fa8..6e8aab7 100644
+index 44f4fa8b..6e8aab77 100644
 --- a/deeplabcut/__init__.py
 +++ b/deeplabcut/__init__.py
 @@ -12,10 +12,6 @@
