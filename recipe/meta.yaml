@@ -1,4 +1,4 @@
-{% set version = "2.3.8" %}
+{% set version = "2.3.9" %}
 
 package:
   name: deeplabcut
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: ad4a630c30eb3b5e77d46c54c1ef5bf5e93661ed6f223e4d7b1467d4d3f572af
+  sha256: 80f7199aceb4edef68326353a132158ab01425b208b7ea9abcd160da47ef3c91
   patches:
     - patches/0001-Do-not-install-download-script.patch
     - patches/0002-Silence-warnings-about-DLC-lite-mode.patch
