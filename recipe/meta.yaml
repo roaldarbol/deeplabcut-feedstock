@@ -29,23 +29,23 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.9
     - pip
   run:
-    - python >=3.8
-    - dlclibrary
+    - python >=3.9
+    - dlclibrary >=0.0.6
     - filterpy >=1.4.4
     - ruamel.yaml >=0.15.0
     - imgaug >=0.4.0
+    - imageio-ffmpeg
     - numba >=0.54
-    - matplotlib-base >=3.3
+    - matplotlib-base >=3.3,!=3.7.0,!=3.7.1
     - networkx >=2.6
     - numpy >=1.18.5
     - opencv
     - pandas >=1.0.1,!=1.5.0
     - scikit-image >=0.17
     - scikit-learn >=1.0
-    # https://github.com/DeepLabCut/DeepLabCut/pull/2290
     - scipy >=1.9
     - statsmodels >=0.11
     - pytables >=3.7.0
@@ -54,7 +54,7 @@ requirements:
     - tqdm
     - pyyaml
     - pillow >=7.1
-    - imageio-ffmpeg
+
   run_constrained:
     - napari-deeplabcut >=0.0.9
     # not to sure on this lower bound, but lets go with it
