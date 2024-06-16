@@ -1,4 +1,4 @@
-{% set version = "2.3.9" %}
+{% set version = "2.3.10" %}
 
 package:
   name: deeplabcut
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-{{ version }}.tar.gz
-  sha256: 80f7199aceb4edef68326353a132158ab01425b208b7ea9abcd160da47ef3c91
+  sha256: 6eb0db8d1485f35a0492ddc74484c1dfe798e3177f29ff3b0c18d62bb1d8d62e
   patches:
     - patches/0001-Do-not-install-download-script.patch
-    - patches/0002-Silence-warnings-about-DLC-lite-mode.patch
+    - patches/0002-silence-warnings-about-tensorflow-lite.patch
     - patches/0003-Do-not-modify-tensorflow-warnings.patch
-    - patches/0004-Silence-warnings-about-missing-pytorch.patch
+    - patches/0004-silence-warnings-about-pytorch.patch
     - patches/0005-Use-qtpy-instead-of-PySide6.patch
     - patches/0006-Remove-hard-dependency-on-torch.patch
-    - patches/0007-Lazy-Import-pyqt-and-default-to-PySide6.patch
+    - patches/0007-Lazy-import-qtpy-and-default-to-PySide6.patch
     - patches/0008-add-outputs-for-multi-animal-model-export.patch
 
 build:
@@ -49,8 +49,8 @@ requirements:
     - scipy >=1.9
     - statsmodels >=0.11
     - pytables >=3.7.0
-    - tensorpack >=0.11
     - tf_slim >=1.1.0
+    - tensorpack >=0.11
     - tqdm
     - pyyaml
     - pillow >=7.1

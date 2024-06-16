@@ -1,0 +1,32 @@
+From 33aa351411631702b6fc5390b65d545f46c8242a Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Sun, 16 Jun 2024 08:44:49 -0400
+Subject: [PATCH 4/8] silence warnings about pytorch
+
+---
+ deeplabcut/__init__.py | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/deeplabcut/__init__.py b/deeplabcut/__init__.py
+index 6e8aab77..b303b53f 100644
+--- a/deeplabcut/__init__.py
++++ b/deeplabcut/__init__.py
+@@ -68,14 +68,7 @@ from deeplabcut.utils import (
+ try:
+     from deeplabcut.pose_tracking_pytorch import transformer_reID
+ except ModuleNotFoundError as e:
+-    import warnings
+-
+-    warnings.warn(
+-        """
+-        As PyTorch is not installed, unsupervised identity learning will not be available.
+-        Please run `pip install torch`, or ignore this warning.
+-        """
+-    )
++    pass
+ 
+ from deeplabcut.utils.auxfun_videos import (
+     ShortenVideo,
+-- 
+2.43.2
+
