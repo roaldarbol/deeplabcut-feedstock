@@ -1,4 +1,4 @@
-From 88d8fc8b0c9f4a9c526c23b3c635930c33a28f5f Mon Sep 17 00:00:00 2001
+From babbfaa71ff3fa6f2ed4c9f8c5bf6d12807ce21f Mon Sep 17 00:00:00 2001
 From: jefromson <66144986+jefromson@users.noreply.github.com>
 Date: Sat, 13 May 2023 15:49:22 -0400
 Subject: [PATCH 8/8] add outputs for multi-animal model export
@@ -48,5 +48,5 @@ index ab9d2d96..e6a790dd 100644
      input = tf.compat.v1.get_default_graph().get_operations()[0].name
  
 -- 
-2.40.1
+2.43.2
 
