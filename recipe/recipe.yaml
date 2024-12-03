@@ -1,0 +1,86 @@
+schema_version: 1
+
+context:
+  version: 2.3.10
+
+package:
+  name: deeplabcut
+  version: ${{ version }}
+
+source:
+  url: https://pypi.io/packages/source/d/deeplabcut/deeplabcut-${{ version }}.tar.gz
+  sha256: 6eb0db8d1485f35a0492ddc74484c1dfe798e3177f29ff3b0c18d62bb1d8d62e
+  patches:
+    - patches/0001-Do-not-install-download-script.patch
+    - patches/0002-silence-warnings-about-tensorflow-lite.patch
+    - patches/0003-Do-not-modify-tensorflow-warnings.patch
+    - patches/0004-silence-warnings-about-pytorch.patch
+    - patches/0005-Use-qtpy-instead-of-PySide6.patch
+    - patches/0006-Remove-hard-dependency-on-torch.patch
+    - patches/0007-Lazy-import-qtpy-and-default-to-PySide6.patch
+    - patches/0008-add-outputs-for-multi-animal-model-export.patch
+
+build:
+  # Confirm with upstream before making this entry point
+  # https://github.com/DeepLabCut/DeepLabCut/pull/1547
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps
+  python:
+    entry_points:
+      - dlc = deeplabcut.cli:main
+      - deeplabcut = deeplabcut.gui.launch_script:launch_dlc
+
+requirements:
+  host:
+    - python >=3.9
+    - pip
+    - setuptools
+  run:
+    - python >=3.9
+    - dlclibrary >=0.0.6
+    - filterpy >=1.4.4
+    - ruamel.yaml >=0.15.0
+    - imgaug >=0.4.0
+    - imageio-ffmpeg
+    - numba >=0.54
+    - matplotlib-base >=3.3,!=3.7.0,!=3.7.1
+    - networkx >=2.6
+    - numpy >=1.18.5
+    - opencv
+    - pandas >=1.0.1,!=1.5.0
+    - scikit-image >=0.17
+    - scikit-learn >=1.0
+    - scipy >=1.9
+    - statsmodels >=0.11
+    - pytables >=3.7.0
+    - tf_slim >=1.1.0
+    - tensorpack >=0.11
+    - tqdm
+    - pyyaml
+    - pillow >=7.1
+  run_constraints:
+    - napari-deeplabcut >=0.0.9
+    - napari >=0.4.0
+
+tests:
+  - python:
+      imports:
+        - deeplabcut
+  - requirements:
+      run:
+        - pip
+    script:
+      - pip check
+
+about:
+  license: LGPL-3.0-only
+  license_file: LICENSE
+  summary: DeepLabCut is a toolbox for markerless pose estimation of animals performing various tasks.
+  homepage: https://www.deeplabcut.org
+  repository: https://github.com/DeepLabCut/DeepLabCut
+
+extra:
+  recipe-maintainers:
+    - hmaarrfk
+    - roaldarbol
